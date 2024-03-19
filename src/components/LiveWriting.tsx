@@ -27,7 +27,7 @@ export default function LiveWriting() {
     };
   }, []);
   return (
-    <div>
+    <div className="m-[20px]">
       {!open && (
         <button
           onClick={(e: any) => {
