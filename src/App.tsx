@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div>
         <nav>
-          <ul className="flex gap-[10px] ml-[10px] mt-[10px]">
+          <ul className="flex gap-[20px] ml-[10px] mt-[10px]">
             <li>
               <Link to="/livewriting">LiveWriting</Link>
             </li>
