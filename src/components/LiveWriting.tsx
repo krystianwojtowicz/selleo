@@ -5,7 +5,6 @@ export default function LiveWriting() {
   const [open, setOpen] = useState(false);
   const [enter, setEnter] = useState(false);
   const [outside, setOutside] = useState(false);
-  console.log(outside, enter);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -13,24 +12,6 @@ export default function LiveWriting() {
       setEnter(true);
     }
   };
-  // const divRef = useRef<HTMLDivElement>(null);
-  //   useEffect(() => {
-  //       const handleClickOutside = (event: MouseEvent) => {
-  //           // Sprawdź, czy divRef.current jest zdefiniowane przed użyciem
-  //           if (
-  //               divRef.current &&
-  //               !divRef.current.contains(event.target as Node)
-  //           ) {
-  //               setOpen(false);
-  //           }
-  //       };
-
-  //       document.body.addEventListener('click', handleClickOutside);
-
-  //       return () => {
-  //           document.body.removeEventListener('click', handleClickOutside);
-  //       };
-  //   }, [divRef]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -49,7 +30,7 @@ export default function LiveWriting() {
     <div>
       {!open && (
         <button
-          onClick={(e) => {
+          onClick={(e: any) => {
             e.stopPropagation();
             setOpen(true);
           }}
