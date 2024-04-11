@@ -1,15 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Searchbox() {
   const colors = ['green', 'blue'];
 
-  const [color, setColor] = useState('');
   const [input, setInput] = useState('');
   const [searchResults, setSearchResults] = useState(colors);
 
   const handleSearch = (e: any) => {
     const searchValue = e.target.value;
-    setColor(searchValue);
     setInput(searchValue);
     const filteredResults = colors.filter((item) =>
       item.toLowerCase().includes(searchValue.toLowerCase()),
@@ -17,11 +15,7 @@ export default function Searchbox() {
     setSearchResults(filteredResults);
   };
 
-  useEffect(() => {
-    if (input) {
-      setColor(searchResults[0]);
-    }
-  }, [searchResults]);
+  const color = searchResults[0] || '';
 
   return (
     <div className="m-[20px]">
